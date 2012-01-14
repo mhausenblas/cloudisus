@@ -6,7 +6,7 @@ _Cloud Is Us_ distributes the effort necessary to process large graph datasets t
 
 The following steps are performed in a typical _Cloud Is Us_ processing phase:
 
-1. The `client` initiates the processing by ingesting a graph dataset into the `allociner` through providing a HTTP URI that points to the location of a dataset in [NTriple](http://www.w3.org/2001/sw/RDFCore/ntriples/) format (called the source).
+1. The `client` initiates the processing by ingesting a graph dataset into the `allociner` through providing a HTTP URI that points to the location of a dataset - called the source - in [N-Triples](http://www.w3.org/2001/sw/RDFCore/ntriples/) format.
 2. The `allociner` stream-reads the data from the client's source and allocates data chunks round-robin on a per-subject basis to `contributors`. 
 3. Once all `contributors` have loaded the data locally the `client` can issue a [query](http://www.w3.org/TR/rdf-sparql-query/), which is distributed to all `contributors`.
 4. Each `contributor` locally executes the query and sends back the result to the `allociner` where it is combined and made available to the `client`.
