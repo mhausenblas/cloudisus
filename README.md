@@ -4,7 +4,7 @@ _Cloud Is Us_ distributes the effort necessary to process large graph data sets 
 
 ## Architecture
 
-![cloudisus architecture](https://docs.google.com/drawings/pub?id=1CEwft3-g0mIvAnZvpbR1Mnc50jLZZqj1ii43M7WUXsY&amp;w=737&amp;h=332 "Cloud Is Us architecture")
+![cloudisus architecture](https://github.com/mhausenblas/cloudisus/raw/master/design/cloudisus-architecture.png "Cloud Is Us architecture")
 
 ## Components
 
