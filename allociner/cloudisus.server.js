@@ -20,18 +20,31 @@ http.createServer(function(req, res) {
 	// Cloud Is Us API URI space - routing of paths to function calls
 	console.log("CLOUDISUS handling " + req.url);
 	
-	switch (furl) { 
-		case "/":
-			allociner.serve("index.html", "text/html", req, res);
-			break;
-		case  "/ingest":
-			allociner.ingest(SERVER_HOSTNAME, req, res, req.url);
-			break;
-		case "/query":
-			allociner.query(SERVER_HOSTNAME, req, res, req.url);
-			break;
-		default:
-			allociner.dunno(res);
+	if(furl.indexOf("style") >= 0) { // serve files from library directory
+		allociner.serve('../' + furl, "text/css", req, res);
+	}
+	else{
+		if(furl.indexOf("lib") >= 0) { // serve files from the contributor's library directory
+			allociner.serve("../contributor/" + furl, "application/json", req, res);
+		}
+		else {
+			switch (furl) { // static and/or API calls
+				case "/":
+					allociner.serve("index.html", "text/html", req, res);
+					break;
+				case "/contribute":
+					allociner.serve("../contributor/index.html", "text/html", req, res);
+					break;
+				case "/ingest":
+					allociner.ingest(SERVER_HOSTNAME, req, res, req.url);
+					break;
+				case "/query":
+					allociner.query(SERVER_HOSTNAME, req, res, req.url);
+					break;
+				default:
+					allociner.dunno(res);
+			}
+		}
 	}
 }).listen(SERVER_PORT, SERVER_HOSTNAME);
 
