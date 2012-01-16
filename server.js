@@ -11,7 +11,7 @@ var url = require("url");
 var path = require("path");
 var querystring = require("querystring");
 var config = require('./cloudisus.config');
-var allociner = require('./cloudisus.allociner');
+var allociner = require('./lib/cloudisus.allociner');
 
 
 http.createServer(function(req, res) {
@@ -21,19 +21,19 @@ http.createServer(function(req, res) {
 	console.log("CLOUDISUS handling " + req.url);
 	
 	if(furl.indexOf("style") >= 0) { // serve files from library directory
-		allociner.serve('../' + furl, "text/css", req, res);
+		allociner.serve(furl, "text/css", req, res);
 	}
 	else{
 		if(furl.indexOf("lib") >= 0) { // serve files from the contributor's library directory
-			allociner.serve("../contributor/" + furl, "application/json", req, res);
+			allociner.serve(furl, "application/json", req, res);
 		}
 		else {
 			switch (furl) { // static and/or API calls
 				case "/":
-					allociner.serve("index.html", "text/html", req, res);
+					allociner.serve("static/index.html", "text/html", req, res);
 					break;
 				case "/contribute":
-					allociner.serve("../contributor/index.html", "text/html", req, res);
+					allociner.serve("static/contributor.html", "text/html", req, res);
 					break;
 				case "/ingest":
 					allociner.ingest(SERVER_HOSTNAME, req, res, req.url);
@@ -46,6 +46,6 @@ http.createServer(function(req, res) {
 			}
 		}
 	}
-}).listen(SERVER_PORT, SERVER_HOSTNAME);
+}).listen(SERVER_PORT);
 
 console.log("CLOUDISUS - running on server " + SERVER_HOSTNAME + ", listening on port " + SERVER_PORT);
