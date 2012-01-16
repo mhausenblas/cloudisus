@@ -53,7 +53,7 @@ Essentially, the table above tells us that with some 10k `contributors`, that is
 
 ## Todo
 
-* add Nodester ack 
+* add Nodester ack and link to source code
 * implement round-robin stream load in allociner
 * implement local SPARQL query in contributor
 * implement combine in allociner
