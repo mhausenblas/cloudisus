@@ -30,10 +30,10 @@ http.createServer(function(req, res) {
 		else {
 			switch (furl) { // static and/or API calls
 				case "/":
-					allociner.serve("static/index.html", "text/html", req, res);
+					allociner.serve("./static/index.html", "text/html", req, res);
 					break;
 				case "/contribute":
-					allociner.serve("static/contributor.html", "text/html", req, res);
+					allociner.serve("./static/contributor.html", "text/html", req, res);
 					break;
 				case "/ingest":
 					allociner.ingest(SERVER_HOSTNAME, req, res, req.url);
