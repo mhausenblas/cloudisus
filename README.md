@@ -51,6 +51,15 @@ Essentially, the table above tells us that with some 10k `contributors`, that is
 * cloudisus.contributor and cloudisus.client - [rdfstore.js](https://github.com/antoniogarrote/rdfstore-js)
 * cloudisus.allociner - [Node.js](http://nodejs.org/)/rdfstore.js + [Dydra](http://dydra.com/)
 
+## Todo
+
+* add Nodester ack 
+* implement round-robin stream load in allociner
+* implement local SPARQL query in contributor
+* implement combine in allociner
+* implement client
+* implement dashboard
+
 ## License
 
 The software provided here is in the Public Domain. 
