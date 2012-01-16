@@ -7,8 +7,11 @@ body {
 
 header {
 	text-align: center;
-	font-size: 150%;
+	font-size: 300%;
 	font-weight: bold;
+	color: #000;
+	text-shadow: 3px 2px 2px #c0c0c0;
+	margin: 1em 1em 0em 2em; 
 }
 
 footer {
@@ -25,7 +28,7 @@ img {
 }
 
 a { 
-	color: #44A; 
+	color: #44a; 
 	text-decoration: none; 
 }
 
@@ -33,19 +36,20 @@ a:hover {
 	text-decoration: underline; 
 }
 
-a.home { 
-	color: #000; 
+.notsoimportant a { 
+	color: #99c; 
 	text-decoration: none; 
 }
 
-a.home:hover { 
+.notsoimportant  a:hover { 
 	text-decoration: underline; 
 }
 
 #main { 
+	text-align: justify;
 	background: #fff;
-	margin: 1em 2em 1em 2em; 
-	padding: 20px;
+	margin: -1.3em 2em 1em 2em; 
+	padding: 4em 8em 2em 8em;
 	-moz-border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	border-bottom: 1px solid #e0e0e0;
@@ -54,6 +58,10 @@ a.home:hover {
 	box-shadow: 3px 3px 4px #000;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
 	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');	
+}
+
+#main .notsoimportant {
+	color: #c0c0c0;
 }
 
 #contribute { 
