@@ -11,14 +11,19 @@ var url = require("url");
 var path = require("path");
 var querystring = require("querystring");
 var config = require('./cloudisus.config');
+var dateFormat = require('./lib/dateformat');
 var allociner = require('./lib/cloudisus.allociner');
 
 
 http.createServer(function(req, res) {
 	var furl = url.parse(req.url).pathname;
+	var now = new Date();
+	
+	//now = now.getFullYear() + "-" + now.getMonth() + 1 + "-" + now.getDate() + "T" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " UTC " + now.getTimezoneOffset()/60;
+	
 	
 	// Cloud Is Us API URI space - routing of paths to function calls
-	console.log("CLOUDISUS handling " + req.url);
+	console.log( dateFormat(now, "isoUtcDateTime") + " - handling " + req.url);
 	
 	if(furl.indexOf("style") >= 0) { // serve files from library directory
 		allociner.serve(furl, "text/css", req, res);
