@@ -40,8 +40,14 @@ http.createServer(function(req, res) {
 				case "/contribute":
 					allociner.serve("./static/contributor.html", "text/html", req, res);
 					break;
+				case "/contribute-init":
+				allociner.contribute(SERVER_HOSTNAME, req, res);
+					break;
 				case "/ingest":
-					allociner.ingest(SERVER_HOSTNAME, req, res, req.url);
+					allociner.ingest(SERVER_HOSTNAME, req, res, "http://dbpedia.org/data/Galway.ntriples");//req.url);
+					break;
+				case "/job":
+					allociner.jobs(SERVER_HOSTNAME, req, res);
 					break;
 				case "/query":
 					allociner.query(SERVER_HOSTNAME, req, res, req.url);
@@ -53,4 +59,4 @@ http.createServer(function(req, res) {
 	}
 }).listen(SERVER_PORT);
 
-console.log("CLOUDISUS - running on server " + SERVER_HOSTNAME + ", listening on port " + SERVER_PORT);
+console.log("CLOUDISUS - running on server " + SERVER_HOSTNAME + ", listening on port " + SERVER_PORT + " with Node.js version " + process.version);
