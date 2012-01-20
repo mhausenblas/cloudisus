@@ -40,17 +40,23 @@ http.createServer(function(req, res) {
 				case "/contribute":
 					allociner.serve("./static/contributor.html", "text/html", req, res);
 					break;
+				// contributor nouns:
 				case "/contribute-init":
-				allociner.contribute(SERVER_HOSTNAME, req, res);
+					allociner.contribute(req, res);
 					break;
+				case "/contributor":
+					allociner.contributors(req, res);
+					break;
+				// job management nouns:
 				case "/ingest":
-					allociner.ingest(SERVER_HOSTNAME, req, res, "http://dbpedia.org/data/Galway.ntriples");//req.url);
+					allociner.ingest(req, res, "http://dbpedia.org/data/Galway.ntriples");//req.url);
 					break;
 				case "/job":
-					allociner.jobs(SERVER_HOSTNAME, req, res);
+					allociner.jobs(req, res);
 					break;
+				// processing nouns:
 				case "/query":
-					allociner.query(SERVER_HOSTNAME, req, res, req.url);
+					allociner.query(req, res, req.url);
 					break;
 				default:
 					allociner.dunno(res);

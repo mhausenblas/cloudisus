@@ -27,21 +27,18 @@ img {
 	border: 0px solid white; 
 }
 
+footer {
+	margin: 2em 1em 0 1em;
+	font-size: 70%;
+	text-align: center;
+}
+
 a { 
 	color: #44a; 
 	text-decoration: none; 
 }
 
 a:hover { 
-	text-decoration: underline; 
-}
-
-.notsoimportant a { 
-	color: #99c; 
-	text-decoration: none; 
-}
-
-.notsoimportant  a:hover { 
 	text-decoration: underline; 
 }
 
@@ -64,16 +61,20 @@ a:hover {
 	color: #c0c0c0;
 }
 
-#contribute { 
+.notsoimportant a { 
+	color: #99c; 
+	text-decoration: none; 
+}
+
+.notsoimportant  a:hover { 
+	text-decoration: underline; 
+}
+
+.action { 
+	margin: 3px;
 	border: 1px solid #c0c0c0;
-	padding: 3px 5px 3px 5px;
+	padding: 2px 5px 2px 5px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	cursor: pointer;
-}
-
-footer {
-	margin: 2em 1em 0 1em;
-	font-size: 70%;
-	text-align: center;
 }
