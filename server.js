@@ -40,6 +40,9 @@ http.createServer(function(req, res) {
 				case "/contribute":
 					allociner.serve("./static/contributor.html", "text/html", req, res);
 					break;
+				case "/static/eyecatcher.gif":
+					allociner.serve("./static/eyecatcher.gif", "image/gif", req, res);
+					break;
 				// contributor nouns:
 				case "/contribute-init":
 					allociner.contribute(req, res);
